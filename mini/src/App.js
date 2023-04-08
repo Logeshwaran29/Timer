@@ -1,6 +1,10 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { menu } from './Components/menu';
+import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Method2 from './pages/method2';
+import Rhythm from './pages/rhythm';
+import Wish from './pages/wish';
 
 const PomodoroTimer = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -76,10 +80,15 @@ const PomodoroTimer = () => {
 
   return (
     <div id="App">
-    <div id="side"><i class="fa-solid fa-bars"></i>
-    <menu></menu>
-    </div>
-    
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/wish' component={Wish} />
+          <Route path='/method2' component={Method2} />
+          <Route path='/rhythm' component={Rhythm} />
+        </Routes>
+      </Router>
+   <div/>
     <div id="div">
       <audio id="audio">
         <source src="alarm.mp3" type='audio/mpeg'/>

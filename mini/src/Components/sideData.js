@@ -1,13 +1,11 @@
-import React from 'react';
-
 export const sideData = [{
         title: 'Pomodoro',
         path: '/',
         cName: 'nav-text'
     },
     {
-        title: '52-17',
-        path: '/52-17',
+        title: 'Method2',
+        path: '/method2',
         cName: 'nav-text'
 
     },
@@ -23,3 +21,5 @@ export const sideData = [{
         cName: 'nav-text'
     }
 ]
+
+
