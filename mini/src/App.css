@@ -1,0 +1,67 @@
+body {
+    background: url(back1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#div {
+    text-align: center;
+    margin-top: 15%;
+}
+
+.button {
+    border: 3px solid rgb(0, 0, 0);
+    background: transparent;
+    width: 8%;
+    border-radius: 20px;
+    font-size: 90%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    margin-right: 1%;
+    transition: 0.5s;
+    font-size: 200%;
+}
+
+.button:hover {
+    border-color: white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
+}
+
+#reset {
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    background: transparent;
+    font-size: 90%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    width: 8%;
+    transition: 0.5s;
+    font-size: 200%;
+}
+
+#reset:hover {
+    border-color: white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
+}
+
+#side {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 5%;
+    font-size: 150%;
+}
+
+h1 {
+    font-size: 350%;
+}
+
+h2 {
+    font-size: 300%;
+}
