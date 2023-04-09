@@ -9,7 +9,6 @@ const PomodoroTimer = () => {
   const [isPlay,setIsPlay] = useState(false);
   const a=document.querySelector('#audio');
  
-
   useEffect(() => {
     let interval = null;
     if (isRunning) {
