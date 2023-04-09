@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Timer/static/css/main.38d09c14.css",
+    "main.js": "/Timer/static/js/main.246792a2.js",
+    "static/media/back1.webp": "/Timer/static/media/back1.dd725c2b01ecd0cac7b8.webp",
+    "index.html": "/Timer/index.html",
+    "main.38d09c14.css.map": "/Timer/static/css/main.38d09c14.css.map",
+    "main.246792a2.js.map": "/Timer/static/js/main.246792a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38d09c14.css",
+    "static/js/main.246792a2.js"
+  ]
+}
