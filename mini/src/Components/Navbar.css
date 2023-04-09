@@ -40,3 +40,14 @@ ul li:hover{
     border-radius: 23px;
     color: black;
 }
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+.link:visited{
+    text-decoration: none;
+}
+.link:hover{
+    color:black;
+}

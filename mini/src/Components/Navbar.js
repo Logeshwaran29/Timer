@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import {Link} from 'react-router-dom';
 
 
 function Navbar() {
@@ -16,10 +17,10 @@ function Navbar() {
     </div>
     <nav className={sidebar ? 'nav-menu active':'nav-menu'}>
       <ul>
-        <li>Pomodoro</li>
-        <li>52-17</li>
-        <li>Rhythm</li>
-        <li>Customize</li>
+        <li><Link class="link" to="/">Pomodoro</Link></li>
+        <li><Link class="link" to="/method2">52-17</Link></li>
+        <li><Link class="link" to="/rhythm">Rhythm</Link></li>
+        <li><Link class="link" to="/wish">Customize</Link></li>
       </ul>
     </nav>
     </div>
