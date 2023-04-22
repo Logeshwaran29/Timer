@@ -3,10 +3,10 @@
 }
 
 #i {
-    color: black;
+    color: rgb(255, 255, 255);
     margin-left: 1%;
     margin-top: 1%;
-    font-size: 150%;
+    font-size: 180%;
 }
 
 .nav-menu {
