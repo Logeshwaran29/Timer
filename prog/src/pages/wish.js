@@ -72,8 +72,8 @@ const PomodoroTimer = () => {
     a1.style.display='none';
     b1.style.display='block';
     const work=document.querySelector('#min').value,br=document.querySelector('#sec').value;
-    setWorkTime(work*60);
     setTimeLeft(work*60);
+    setWorkTime(work*60);
     setBreakTimeLeft(br*60);
   }
 
