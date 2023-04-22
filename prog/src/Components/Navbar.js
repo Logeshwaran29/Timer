@@ -10,8 +10,14 @@ function Navbar() {
     setSidebar(!sidebar);
   }
 
+  const change=()=>{
+    if(sidebar){
+      setSidebar(!sidebar);
+    }
+  };
+
   return (
-    <div>
+    <div onClick={change}>
     <div className='navbar' onClick={showSidebar}>
     <i id='i' class="fa-solid fa-bars"></i>
     </div>
@@ -26,6 +32,6 @@ function Navbar() {
     <Outlet/>
     </div>
   );
-}
+};
 
 export default Navbar;
