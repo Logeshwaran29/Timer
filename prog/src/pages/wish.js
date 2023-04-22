@@ -73,6 +73,7 @@ const PomodoroTimer = () => {
     b1.style.display='block';
     const work=document.querySelector('#min').value,br=document.querySelector('#sec').value;
     setWorkTime(work*60);
+    setTimeLeft(work*60);
     setBreakTimeLeft(br*60);
   }
 
@@ -85,7 +86,7 @@ const PomodoroTimer = () => {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
     const seconds = (time % 60).toString().padStart(2, '0');
-    document.title= `${minutes}:${seconds}`+" Timer";
+    document.title= `${minutes}:${seconds}`+" | Timer";
     return `${minutes}:${seconds}`;
   };
 
