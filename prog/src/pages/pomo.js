@@ -2,8 +2,8 @@ import './pomo.css';
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
-  const [timeLeft, setTimeLeft] = useState(0.2 * 60); // 25 minutes in seconds
-  const [breakTimeLeft, setBreakTimeLeft] = useState(0.1 * 60); // 5 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
+  const [breakTimeLeft, setBreakTimeLeft] = useState(5 * 60); // 5 minutes in seconds
   const [isRunning, setIsRunning] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
