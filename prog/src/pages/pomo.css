@@ -15,7 +15,7 @@ body {
 .button {
     border: 3px solid rgb(0, 0, 0);
     background: transparent;
-    width: 8%;
+    width: 5%;
     border-radius: 20px;
     font-size: 90%;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -39,7 +39,7 @@ body {
     font-size: 90%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
-    width: 8%;
+    width: 5%;
     transition: 0.5s;
     font-size: 200%;
 }

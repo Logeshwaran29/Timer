@@ -30,7 +30,7 @@ const PomodoroTimer = () => {
       setIsRunning(false);
       if(isBreak){
         setIsBreak(false);
-        setTimeLeft(25*60);
+        setTimeLeft(90*60);
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
@@ -42,8 +42,8 @@ const PomodoroTimer = () => {
     if(isPlay){
       a.pause();
       a.currentTime=0;
+      setIsPlay(false);
     }
-    setIsBreak(false);
     setIsRunning(true);
   };
 
@@ -51,6 +51,7 @@ const PomodoroTimer = () => {
     if(isPlay){
       a.pause();
       a.currentTime=0;
+      setIsPlay(false);
     }
     setIsRunning(false);
   };
@@ -58,10 +59,11 @@ const PomodoroTimer = () => {
   const resetTimer = () => {
     a.pause();
     a.currentTime=0;
-    setTimeLeft(25 * 60);
-    setBreakTimeLeft(5 * 60);
+    setTimeLeft(90 * 60);
+    setBreakTimeLeft(20 * 60);
     setIsRunning(false);
     setIsBreak(false);
+    setIsPlay(false);
   };
 
   const formatTime = (time) => {

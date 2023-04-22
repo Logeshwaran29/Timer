@@ -43,8 +43,8 @@ const PomodoroTimer = () => {
     if(isPlay){
       a.pause();
       a.currentTime=0;
+      setIsPlay(false);
     }
-    setIsBreak(false);
     setIsRunning(true);
   };
 
@@ -52,6 +52,7 @@ const PomodoroTimer = () => {
     if(isPlay){
       a.pause();
       a.currentTime=0;
+      setIsPlay(false);
     }
     setIsRunning(false);
   };
@@ -63,7 +64,9 @@ const PomodoroTimer = () => {
     setBreakTimeLeft(5 * 60);
     setIsRunning(false);
     setIsBreak(false);
+    setIsPlay(false);
   };
+
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
