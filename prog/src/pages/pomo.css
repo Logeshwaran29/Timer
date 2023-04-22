@@ -13,7 +13,7 @@ body {
 }
 
 .button {
-    /* border: 3px solid rgb(0, 0, 0); */
+    border: 2px solid rgb(0, 0, 0);
     background: transparent;
     width: 5%;
     border-radius: 20px;
@@ -26,14 +26,14 @@ body {
 }
 
 .button:hover {
-    /* border-color: white; */
+    border-color: white;
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
     transition: 0.5s;
 }
 
 #reset {
-    /* border: 3px solid rgb(0, 0, 0); */
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
     background: transparent;
     font-size: 90%;
@@ -46,7 +46,7 @@ body {
 }
 
 #reset:hover {
-    /* border-color: white; */
+    border-color: white;
     color: white;
     background-color: rgba(0, 0, 0, 0.6);
     transition: 0.5s;
