@@ -1,4 +1,4 @@
-import './cust.css';
+import './pomo.css';
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
@@ -78,28 +78,28 @@ const PomodoroTimer = () => {
 
   return (
     <div id="div">
-      {/* <div id="before">
+      <div id="before">
         <h2>Choose Time</h2>
         <div className='in'>
           <label htmlFor="min">Minutes:</label>
-        <input type="number" id='min' step={1} min={1} max={90}/>
+        <input type="number" id='min' step={1} min={1} max={90}/> 
         </div>
         <div className='in'>
           <label htmlFor="sec">Break:</label>
         <input type="number" id='sec' step={1} min={1} max={90}/>
         </div>
         <button>Save</button> 
-        </div> */}
+      </div>
       <div id="after">
-      <audio id="audio">
-        <source src="alarm.mp3" type='audio/mpeg'/>
-      </audio>
-      <h1>{isBreak ? 'Break Time!' : 'Work Time!'}</h1>
-      <h2>{formatTime(timeLeft)}</h2>
-      <button class="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
-      <button class="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
-      <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
-    </div>
+        <audio id="audio">
+          <source src="alarm.mp3" type='audio/mpeg'/>
+        </audio>
+        <h1>{isBreak ? 'Break Time!' : 'Work Time!'}</h1>
+        <h2>{formatTime(timeLeft)}</h2>
+        <button class="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
+        <button class="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
+        <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
+      </div>
     </div>
   );
 };

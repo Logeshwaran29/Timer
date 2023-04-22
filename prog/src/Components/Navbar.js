@@ -17,10 +17,10 @@ function Navbar() {
     </div>
     <nav className={sidebar ? 'nav-menu active':'nav-menu'}>
       <ul>
-        <li><Link class="link" to="/">Pomodoro</Link></li>
-        <li><Link class="link" to="/method2">52-17</Link></li>
-        <li><Link class="link" to="/rhythm">Rhythm</Link></li>
-        <li><Link class="link" to="/wish">Customize</Link></li>
+        <li><Link className="link" to="/">Pomodoro</Link></li>
+        <li><Link className="link" to="/method2">52-17</Link></li>
+        <li><Link className="link" to="/rhythm">Rhythm</Link></li>
+        <li><Link className="link" to="/wish">Customize</Link></li>
       </ul>
     </nav>
     <Outlet/>

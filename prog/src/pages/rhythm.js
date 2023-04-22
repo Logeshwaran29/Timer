@@ -1,4 +1,4 @@
-import './rhythm.css';
+import './pomo.css';
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
