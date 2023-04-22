@@ -2,11 +2,12 @@ import './pomo.css';
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
-  const [timeLeft, setTimeLeft] = useState(10 * 60); // 52 minutes in seconds
-  const [breakTimeLeft, setBreakTimeLeft] = useState(5 * 60); // 17 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(0 * 60); 
+  const [breakTimeLeft, setBreakTimeLeft] = useState(0 * 60); 
   const [isRunning, setIsRunning] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
+  const [workTime,setWorkTime] = useState(0*60);
   const a=document.querySelector('#audio');
  
 
@@ -31,13 +32,13 @@ const PomodoroTimer = () => {
       setIsRunning(false);
       if(isBreak){
         setIsBreak(false);
-        setTimeLeft(25*60);
+        setTimeLeft(workTime);
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
       }
     }
-  }, [timeLeft, breakTimeLeft, isBreak]);
+  }, [timeLeft, breakTimeLeft, isBreak,workTime]);
 
   const startTimer = () => {
     if(isPlay){
@@ -60,13 +61,26 @@ const PomodoroTimer = () => {
   const resetTimer = () => {
     a.pause();
     a.currentTime=0;
-    setTimeLeft(25 * 60);
-    setBreakTimeLeft(5 * 60);
+    setTimeLeft(workTime);
     setIsRunning(false);
     setIsBreak(false);
     setIsPlay(false);
   };
 
+  const getValue=()=>{
+    const a1=document.querySelector('#before'),b1=document.querySelector('#after');
+    a1.style.display='none';
+    b1.style.display='block';
+    const work=document.querySelector('#min').value,br=document.querySelector('#sec').value;
+    setWorkTime(work*60);
+    setBreakTimeLeft(br*60);
+  }
+
+  const change=()=>{
+    const a1=document.querySelector('#before'),b1=document.querySelector('#after');
+    a1.style.display='block';
+    b1.style.display='none';
+  }
 
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
@@ -88,7 +102,7 @@ const PomodoroTimer = () => {
           <label htmlFor="sec">Break:</label>
         <input type="number" id='sec' step={1} min={1} max={90}/>
         </div>
-        <button>Save</button> 
+        <button onClick={getValue}>Save</button> 
       </div>
       <div id="after">
         <audio id="audio">
@@ -99,6 +113,7 @@ const PomodoroTimer = () => {
         <button class="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
         <button class="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
         <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
+        <button id="reset" onClick={change}><i class="fa-solid fa-gear"></i></button>
       </div>
     </div>
   );
