@@ -43,12 +43,13 @@ const PomodoroTimer = () => {
       Notification.requestPermission().then((perm) => {
         if(perm==='granted'){
           const notification=new Notification("Focus Timer",{
-            body:text
+            body:text,
+            tag:'Message'
           });
         }
       });
     }
-  }, [timeLeft, breakTimeLeft, isBreak,workTime]);
+  }, [timeLeft, breakTimeLeft, isBreak, workTime]);
 
   const startTimer = () => {
     if(isPlay){
