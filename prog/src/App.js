@@ -3,6 +3,7 @@ import Pomo from './pages/pomo';
 import Method2 from './pages/method2';
 import Rhythm from './pages/rhythm';
 import Wish from './pages/wish';
+import Setting from './pages/setting';
 import { Route, Routes } from "react-router-dom";
 
 const App=()=>{
@@ -15,6 +16,7 @@ const App=()=>{
         <Route path='/method2' element={<Method2/>}/>
         <Route path='/rhythm' element={<Rhythm/>}/>
         <Route path='/wish' element={<Wish/>}/>
+        <Route path='/setting' element={<Setting/>}></Route>
       </Routes>
     </div>
     </>

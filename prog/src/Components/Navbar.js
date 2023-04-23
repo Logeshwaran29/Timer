@@ -27,6 +27,7 @@ function Navbar() {
         <li><Link className="link" to="/method2">52-17</Link></li>
         <li><Link className="link" to="/rhythm">Rhythm</Link></li>
         <li><Link className="link" to="/wish">Customize</Link></li>
+        <li><Link className='link' to="/setting">Settings</Link></li>
       </ul>
     </nav>
     <Outlet/>
