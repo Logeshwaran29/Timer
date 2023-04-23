@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <div onClick={change}>
     <div className='navbar' onClick={showSidebar}>
-    <i id='i' class="fa-solid fa-bars"></i>
+    <i id='i' className="fa-solid fa-bars"></i>
     </div>
     <nav className={sidebar ? 'nav-menu active':'nav-menu'}>
       <ul>

@@ -122,8 +122,8 @@ const PomodoroTimer = () => {
         </audio>
         <h1>{isBreak ? 'Break Time!' : 'Work Time!'}</h1>
         <h2>{formatTime(timeLeft)}</h2>
-        <button class="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
-        <button class="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
+        <button className="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
+        <button className="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
         <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
         <button id="reset" onClick={change}><i class="fa-solid fa-gear"></i></button>
       </div>
