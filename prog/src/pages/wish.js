@@ -2,8 +2,8 @@ import './pomo.css';
 import React, { useState, useEffect } from 'react';
 
 const PomodoroTimer = () => {
-  const [timeLeft, setTimeLeft] = useState(0 * 60); 
-  const [breakTimeLeft, setBreakTimeLeft] = useState(0 * 60); 
+  const [timeLeft, setTimeLeft] = useState(1*60); 
+  const [breakTimeLeft, setBreakTimeLeft] = useState(1*60); 
   const [isRunning, setIsRunning] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
@@ -29,14 +29,24 @@ const PomodoroTimer = () => {
         a.play();
         setIsPlay(true);
       }
+      let text;
       setIsRunning(false);
       if(isBreak){
         setIsBreak(false);
         setTimeLeft(workTime);
+        text="Alright,Get back to your work";
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
+        text="YO!! Its break!"
       }
+      Notification.requestPermission().then((perm) => {
+        if(perm==='granted'){
+          const notification=new Notification("Focus Timer",{
+            body:text
+          });
+        }
+      });
     }
   }, [timeLeft, breakTimeLeft, isBreak,workTime]);
 
@@ -97,11 +107,11 @@ const PomodoroTimer = () => {
         <h2>Choose Time</h2>
         <div className='in'>
           <label htmlFor="min">Minutes:</label>
-        <input type="number" id='min' step={1} min={1} max={90}/> 
+        <input type="number" id='min' step={1} min={1} max={90} required/> 
         </div>
         <div className='in'>
           <label htmlFor="sec">Break:</label>
-        <input type="number" id='sec' step={1} min={1} max={90}/>
+        <input type="number" id='sec' step={1} min={1} max={90} required/>
         </div>
         <button onClick={getValue}>Save</button> 
       </div>
