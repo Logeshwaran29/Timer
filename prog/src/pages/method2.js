@@ -81,7 +81,7 @@ const PomodoroTimer = () => {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
     const seconds = (time % 60).toString().padStart(2, '0');
-    document.title= `${minutes}:${seconds}`+ " | Focus Timer";
+    document.title= `${minutes}:${seconds} | Focus Timer`;
     return `${minutes}:${seconds}`;
   };
 
