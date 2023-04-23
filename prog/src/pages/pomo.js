@@ -28,14 +28,25 @@ const PomodoroTimer = () => {
         a.play();
         setIsPlay(true);
       }
+      let text;
       setIsRunning(false);
       if(isBreak){
         setIsBreak(false);
         setTimeLeft(25*60);
+        text="Alright! Breaks time over, Get back to your work";
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
+        text="You have been working for a quite a time, Time to take a break!";
       }
+      Notification.requestPermission().then((perm) => {
+        if(perm==='granted'){
+          const notification=new Notification("Focus Timer",{
+            body:text,
+            tag:'Message'
+          });
+        }
+      });
     }
   }, [timeLeft, breakTimeLeft, isBreak]);
 

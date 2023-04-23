@@ -34,11 +34,11 @@ const PomodoroTimer = () => {
       if(isBreak){
         setIsBreak(false);
         setTimeLeft(workTime);
-        text="Alright,Get back to your work";
+        text="Alright! Breaks time over, Get back to your work";
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
-        text="YO!! Its break!"
+        text="You have been working for a quite a time, Time to take a break!";
       }
       Notification.requestPermission().then((perm) => {
         if(perm==='granted'){
