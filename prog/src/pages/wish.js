@@ -42,7 +42,7 @@ const PomodoroTimer = () => {
       }
       Notification.requestPermission().then((perm) => {
         if(perm==='granted'){
-          const notification=new Notification("Focus Timer",{
+          new Notification("Focus Timer",{
             body:text,
             tag:'Message'
           });
