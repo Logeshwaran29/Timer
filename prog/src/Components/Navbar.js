@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <div onClick={change}>
+    <div className='main' onClick={change}>
     <div className='navbar' onClick={showSidebar}>
     <i id='i' className="fa-solid fa-bars"></i>
     </div>
