@@ -120,7 +120,7 @@ const PomodoroTimer = () => {
         <audio id="audio">
           <source src="alarm.mp3" type='audio/mpeg'/>
         </audio>
-        <h1>{isBreak ? 'Break Time!' : 'Work Time!'}</h1>
+        <h1>{isBreak ? 'Break Time!' : 'Focus Time!'}</h1>
         <h2>{formatTime(timeLeft)}</h2>
         <button className="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
         <button className="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
