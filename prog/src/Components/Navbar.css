@@ -1,11 +1,16 @@
 .navbar {
     padding-bottom: 5px;
+    position: absolute;
+}
+
+* {
+    margin: 0%;
 }
 
 #i {
-    color: rgb(255, 255, 255);
-    margin-left: 1%;
-    margin-top: 1%;
+    color: rgb(0, 0, 0);
+    margin-top: 5%;
+    margin-left: 3%;
     font-size: 180%;
 }
 

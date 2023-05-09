@@ -86,6 +86,7 @@ const PomodoroTimer = () => {
 
 
   return (
+    <div id="rhythm">
     <div id="div">
       <audio id="audio">
         <source src="alarm.mp3" type='audio/mpeg'/>
@@ -95,6 +96,7 @@ const PomodoroTimer = () => {
       <button class="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
       <button class="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
       <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
+    </div>
     </div>
   );
 };

@@ -87,7 +87,7 @@ const PomodoroTimer = () => {
 
 
   return (
-    <div id="main">
+    <div id="pomo">
     <div id="div">
       <audio id="audio">
         <source src="alarm.mp3" type='audio/mpeg'/>

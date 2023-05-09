@@ -1,10 +1,37 @@
 body {
+    overflow: hidden;
+}
+
+#pomo {
     background: url(back1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    overflow: hidden;
+}
+
+#m2 {
+    background: url(back2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#rhythm {
+    background: url(back3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+#wish {
+    background: url(back4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
 #div {

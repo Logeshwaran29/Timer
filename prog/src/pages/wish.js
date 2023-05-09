@@ -103,6 +103,7 @@ const PomodoroTimer = () => {
 
 
   return (
+    <div id='wish'>
     <div id="div">
       <div id="before">
         <h2>Choose Time</h2>
@@ -127,6 +128,7 @@ const PomodoroTimer = () => {
         <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
         <button id="reset" onClick={change}><i class="fa-solid fa-gear"></i></button>
       </div>
+    </div>
     </div>
   );
 };
