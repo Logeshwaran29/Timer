@@ -16,7 +16,7 @@ const App=()=>{
         <Route path='/method2' element={<Method2/>}/>
         <Route path='/rhythm' element={<Rhythm/>}/>
         <Route path='/wish' element={<Wish/>}/>
-        <Route path='/setting' element={<Setting/>}></Route>
+        <Route path='/setting' element={<Setting/>}/>
       </Routes>
     </div>
     </>
