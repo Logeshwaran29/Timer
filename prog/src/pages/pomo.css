@@ -1,8 +1,14 @@
 body {
     overflow: hidden;
+    background: url(back1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
 
-#pomo {
+
+/* #pomo {
     background: url(back1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,7 +38,7 @@ body {
     background-size: cover;
     background-position: center;
     height: 100vh;
-}
+} */
 
 #div {
     text-align: center;
