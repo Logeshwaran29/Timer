@@ -51,7 +51,6 @@ body {
     width: 5%;
     border-radius: 20px;
     font-size: 90%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     margin-right: 1%;
     transition: 0.5s;
@@ -69,8 +68,7 @@ body {
     border: 2px solid rgb(0, 0, 0);
     border-radius: 20px;
     background: transparent;
-    font-size: 90%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%;
     color: black;
     width: 5%;
     transition: 0.5s;
