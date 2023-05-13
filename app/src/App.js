@@ -9,7 +9,6 @@ const App = () => {
   const [isPlay,setIsPlay] = useState(false);
   const [workTime,setWorkTime] = useState(25 * 60);
   const a=document.querySelector('#audio');
- 
 
   useEffect(() => {
     let interval = null;
