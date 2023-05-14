@@ -8,6 +8,7 @@ const App = () => {
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
   const [workTime,setWorkTime] = useState(25 * 60);
+  const [checkTime,setCheckTime] = useState(25 * 60);
   const [name,setName] = useState("");
   const a=document.querySelector('#audio');
 
@@ -114,6 +115,17 @@ const App = () => {
     b.style.display='none';
   }
 
+  const choose=(event)=>{
+    const img = `back${event.target.id}.jpg`;
+    const body=document.querySelector('#body');
+    console.log(event.target.id);
+    body.style.backgroundImage='url('+img+')';
+
+    const a=document.querySelector('#back'),b=document.querySelector('#before');
+    a.style.display='none';
+    b.style.display='block';
+  }
+
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
     const seconds = (time % 60).toString().padStart(2, '0');
@@ -135,11 +147,11 @@ const App = () => {
             <legend>Choose Time</legend>
             <div className='in'>
               <label htmlFor="min">Minutes:</label>
-              <input type="number" id='min' step={1} min={1} max={90} required/> 
+              <input type="number" id='min' placeholder='1' step={1} min={1} max={90} required/> 
             </div>
             <div className='in'>
               <label htmlFor="sec">Break:</label>
-              <input type="number" id='sec' step={1} min={1} max={90} required/>
+              <input type="number" id='sec' placeholder='1' step={1} min={1} max={90} required/>
             </div>  
           </fieldset>
         </div> 
@@ -161,14 +173,14 @@ const App = () => {
       <div id='back'>
         <fieldset id='f'>
           <legend>Choose Background</legend>
-          <ul>
-            <li><img src="back1.jpg" alt="logo" /></li>
-            <li><img src="back2.jpg" alt="logo" /></li>
-            <li><img src="back3.jpg" alt="logo" /></li>
-            <li><img src="back4.jpg" alt="logo" /></li>
-            <li><img src="back5.jpg" alt="logo" /></li>
-            <li><img src="back6.jpg" alt="logo" /></li>
-            <li><img src="back7.jpg" alt="logo" /></li>
+          <ul id='list'>
+            <li id='1' onClick={choose}><img src="back1.jpg" alt="logo" /></li>
+            <li id='2' onClick={choose}><img src="back2.jpg" alt="logo" /></li>
+            <li id='3' onClick={choose}><img src="back3.jpg" alt="logo" /></li>
+            <li id='4' onClick={choose}><img src="back4.jpg" alt="logo" /></li>
+            <li id='5' onClick={choose}><img src="back5.jpg" alt="logo" /></li>
+            <li id='6' onClick={choose}><img src="back6.jpg" alt="logo" /></li>
+            <li id='7' onClick={choose}><img src="back7.jpg" alt="logo" /></li>
           </ul>
         </fieldset>
       </div>
