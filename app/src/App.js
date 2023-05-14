@@ -8,6 +8,7 @@ const App = () => {
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
   const [workTime,setWorkTime] = useState(25 * 60);
+  const [name,setName] = useState("");
   const a=document.querySelector('#audio');
 
   useEffect(() => {
@@ -33,11 +34,16 @@ const App = () => {
       if(isBreak){
         setIsBreak(false);
         setTimeLeft(workTime);
-        text="Alright! Breaks time over, Get back to your work";
+        text=`Alright ${name}! Breaks time over, Get back to your work`;
       }else{
         setIsBreak(true);
         setTimeLeft(breakTimeLeft);
-        text="You have been working for a quite a time, Time to take a break!";
+        if(name===""){
+          text="You have been working for a quite a time, Time to take a break!";
+        }else{
+          text=`Hello ${name}! You have been working for a quite a time, Time to take a break!`;
+        }
+        
       }
       Notification.requestPermission().then((perm) => {
         if(perm==='granted'){
@@ -79,13 +85,20 @@ const App = () => {
   };
 
   const getValue=()=>{
+    if(isPlay){
+      a.pause();
+      a.currentTime=0;
+      setIsPlay(false);
+    }
     const a1=document.querySelector('#before'),b1=document.querySelector('#after');
     a1.style.display='none';
     b1.style.display='block';
     const work=document.querySelector('#min').value,br=document.querySelector('#sec').value;
+    const name=document.querySelector('#name').value;
     setTimeLeft(work * 60);
     setWorkTime(work * 60);
     setBreakTimeLeft(br * 60);
+    setName(name);
   }
 
   const change=()=>{
@@ -103,19 +116,49 @@ const App = () => {
 
 
   return (
+    <>
+    <div id='logo'><img src="logo.jpg" alt="Logo"/></div>
     <div id="pomo">
-    <div id="div">
-       <div id="before">
-        <h2>Choose Time</h2>
-        <div className='in'>
-          <label htmlFor="min">Minutes:</label>
-        <input type="number" id='min' step={1} min={1} max={90} required/> 
+      <div id="before">
+        <h2>Settings</h2>
+        <div id="time">
+          <fieldset>
+            <legend>Choose Time</legend>
+            <div className='in'>
+              <label htmlFor="min">Minutes:</label>
+              <input type="number" id='min' step={1} min={1} max={90} required/> 
+            </div>
+            <div className='in'>
+              <label htmlFor="sec">Break:</label>
+              <input type="number" id='sec' step={1} min={1} max={90} required/>
+            </div>  
+          </fieldset>
+        </div> 
+        <div id="field">
+        <fieldset>
+          <legend>Background</legend>
+          <label>Select Background <i class="fa-solid fa-chevron-right"/></label>
+        </fieldset>
         </div>
-        <div className='in'>
-          <label htmlFor="sec">Break:</label>
-        <input type="number" id='sec' step={1} min={1} max={90} required/>
+        <div id='field'>
+          <fieldset>
+            <legend>Name</legend>
+            <label htmlFor="name">Enter Name:</label>
+            <input type="text" id='name'/>
+          </fieldset>
         </div>
-        <button id='button' onClick={getValue}>Save</button> 
+        <button id='button' onClick={getValue}>OK</button>
+      </div>
+      <div id='back'>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
       <div id="after">
         <audio id="audio">
@@ -129,7 +172,7 @@ const App = () => {
         <button id="reset" onClick={change}><i class="fa-solid fa-gear"></i></button>
       </div>
     </div>
-    </div>
+    </>
   );
 };
 
