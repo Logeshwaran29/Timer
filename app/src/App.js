@@ -107,6 +107,12 @@ const App = () => {
     b1.style.display='none';
   }
 
+  const open=()=>{
+    const a=document.querySelector('#back'),b=document.querySelector('#before');
+    a.style.display='block';
+    b.style.display='none';
+  }
+
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60).toString().padStart(2, '0');
     const seconds = (time % 60).toString().padStart(2, '0');
@@ -134,7 +140,7 @@ const App = () => {
             </div>  
           </fieldset>
         </div> 
-        <div id="field">
+        <div id="field" onClick={open}>
         <fieldset>
           <legend>Background</legend>
           <label>Select Background <i class="fa-solid fa-chevron-right"/></label>
@@ -150,15 +156,18 @@ const App = () => {
         <button id='button' onClick={getValue}>OK</button>
       </div>
       <div id='back'>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+        <fieldset id='f'>
+          <legend>Choose Background</legend>
+          <ul>
+              <li><img src="back1.jpg" alt="logo"/></li>
+              <li><img src="back2.jpg" alt="logo"/></li>
+              <li><img src="back3.jpg" alt="logo"/></li>
+              <li><img src="back4.jpg" alt="logo"/></li>
+              <li><img src="back5.jpg" alt="logo"/></li>
+              <li><img src="back6.jpg" alt="logo"/></li>
+              <li><img src="back7.jpg" alt="logo"/></li>
+          </ul>
+        </fieldset>
       </div>
       <div id="after">
         <audio id="audio">
