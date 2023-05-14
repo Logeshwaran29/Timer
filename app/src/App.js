@@ -124,7 +124,9 @@ const App = () => {
 
   return (
     <>
-    <div id='logo'><img src="logo.jpg" alt="Logo"/></div>
+    <div id='logo'>
+      <img id='img' src="image.png" alt="Logo"/>
+    </div>
     <div id="pomo">
       <div id="before">
         <h2>Settings</h2>
@@ -160,13 +162,13 @@ const App = () => {
         <fieldset id='f'>
           <legend>Choose Background</legend>
           <ul>
-            <li><img src="back1.jpg" alt="logo"/></li>
-            <li><img src="back2.jpg" alt="logo"/></li>
-            <li><img src="back3.jpg" alt="logo"/></li>
-            <li><img src="back4.jpg" alt="logo"/></li>
-            <li><img src="back5.jpg" alt="logo"/></li>
-            <li><img src="back6.jpg" alt="logo"/></li>
-            <li><img src="back7.jpg" alt="logo"/></li>
+            <li><img src="back1.jpg" alt="logo" /></li>
+            <li><img src="back2.jpg" alt="logo" /></li>
+            <li><img src="back3.jpg" alt="logo" /></li>
+            <li><img src="back4.jpg" alt="logo" /></li>
+            <li><img src="back5.jpg" alt="logo" /></li>
+            <li><img src="back6.jpg" alt="logo" /></li>
+            <li><img src="back7.jpg" alt="logo" /></li>
           </ul>
         </fieldset>
       </div>

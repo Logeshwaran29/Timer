@@ -122,9 +122,11 @@ fieldset{
     padding: 3.5% 5%;
 }
 
-img{
-    width: 70%;
+#img{
+    width: 20%;
+    margin-top: -8%;
 }
+
 
 legend{
     color: white;
@@ -134,6 +136,7 @@ legend{
     width: 100px;
     padding:2%;
 }
+
 label {
     display: block;
     font-size: 1.5rem;
