@@ -49,12 +49,13 @@ const App = () => {
         if(perm==='granted'){
           new Notification("Focus Timer",{
             body:text,
-            tag:'Message'
+            tag:'Message',
+            icon:'logo.jpg'
           });
         }
       });
     }
-  }, [timeLeft, breakTimeLeft, isBreak, workTime]);
+  }, [timeLeft, breakTimeLeft, isBreak, workTime, name]);
 
   const startTimer = () => {
     if(isPlay){
@@ -159,13 +160,13 @@ const App = () => {
         <fieldset id='f'>
           <legend>Choose Background</legend>
           <ul>
-              <li><img src="back1.jpg" alt="logo"/></li>
-              <li><img src="back2.jpg" alt="logo"/></li>
-              <li><img src="back3.jpg" alt="logo"/></li>
-              <li><img src="back4.jpg" alt="logo"/></li>
-              <li><img src="back5.jpg" alt="logo"/></li>
-              <li><img src="back6.jpg" alt="logo"/></li>
-              <li><img src="back7.jpg" alt="logo"/></li>
+            <li><img src="back1.jpg" alt="logo"/></li>
+            <li><img src="back2.jpg" alt="logo"/></li>
+            <li><img src="back3.jpg" alt="logo"/></li>
+            <li><img src="back4.jpg" alt="logo"/></li>
+            <li><img src="back5.jpg" alt="logo"/></li>
+            <li><img src="back6.jpg" alt="logo"/></li>
+            <li><img src="back7.jpg" alt="logo"/></li>
           </ul>
         </fieldset>
       </div>

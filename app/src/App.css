@@ -115,8 +115,7 @@ fieldset{
 }
 
 #f{
-    display:flex;
-    justify-content: center;
+    display:list-item;
     width: 90%;
     height: 86%;
     overflow: auto; 
@@ -124,7 +123,7 @@ fieldset{
 }
 
 img{
-    width: 80%;
+    width: 70%;
 }
 
 legend{
