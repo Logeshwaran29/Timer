@@ -6,7 +6,6 @@ import image3 from './back3.jpg';
 import image4 from './back4.jpg';
 import image5 from './back5.jpg';
 import image6 from './back6.jpg';
-import image7 from './back7.jpg';
 
 const App = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -123,7 +122,7 @@ const App = () => {
   }
 
   const choose=(event)=>{
-    const img = `back${event.target.id}.jpg`;
+    const img = `./back${event.target.id}.jpg`;
     const body=document.querySelector('#body');
     console.log(event.target.id);
     body.style.backgroundImage='url('+img+') cover cover / center';
@@ -187,7 +186,6 @@ const App = () => {
             <li><img src={image4} alt="logo" id='4' className='im' onClick={choose}/></li>
             <li><img src={image5} alt="logo" id='5' className='im' onClick={choose}/></li>
             <li><img src={image6} alt="logo" id='6' className='im' onClick={choose}/></li>
-            <li><img src={image7} alt="logo" id='7' className='im' onClick={choose}/></li>
           </ul>
         </fieldset>
       </div>
