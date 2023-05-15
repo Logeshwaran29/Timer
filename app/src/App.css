@@ -172,6 +172,7 @@ input {
     background-color: rgb(233, 233, 233);
     border: 2px solid black;
     margin-top: 5%;
+    margin-left: 1.5%;
 }
 
 #button:hover {
