@@ -18,7 +18,7 @@ const App = () => {
   // const [checkTime,setCheckTime] = useState(25 * 60);
   const [name,setName] = useState("");
   const [op,setOp]=useState(false);
-  // const a=document.querySelector('#audio');
+  const a=document.querySelector('#audio');
 
   useEffect(() => {
     let interval = null;
@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     if (timeLeft === 0) {
       if(!isPlay){
-        // a.play();
+        a.play();
         setIsPlay(true);
       }
       let text;
@@ -64,16 +64,14 @@ const App = () => {
             });
           }
         });
-        const audio = new Audio({Audio});
-        audio.play();
       }
     }
   }, [timeLeft, breakTimeLeft, isBreak, workTime, name]);
 
   const startTimer = () => {
     if(isPlay){
-      // a.pause();
-      // a.currentTime=0;
+      a.pause();
+      a.currentTime=0;
       setIsPlay(false);
     }
     setIsRunning(true);
@@ -81,16 +79,16 @@ const App = () => {
 
   const stopTimer = () => {
     if(isPlay){
-      // a.pause();
-      // a.currentTime=0;
+      a.pause();
+      a.currentTime=0;
       setIsPlay(false);
     }
     setIsRunning(false);
   };
 
   const resetTimer = () => {
-    // a.pause();
-    // a.currentTime=0;
+    a.pause();
+    a.currentTime=0;
     setTimeLeft(workTime);
     setBreakTimeLeft(5 * 60);
     setIsRunning(false);
@@ -100,8 +98,8 @@ const App = () => {
 
   const getValue=()=>{
     if(isPlay){
-      // a.pause();
-      // a.currentTime=0;
+      a.pause();
+      a.currentTime=0;
       setIsPlay(false);
     }
     const a1=document.querySelector('#before'),b1=document.querySelector('#after');
@@ -156,7 +154,7 @@ const App = () => {
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
     <div id={op?'about':'not'}>
-    <fieldset id='a'>
+      <fieldset id='a'>
         <legend>About</legend>
         <p>The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. <br /><br />
         This app is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.</p>
@@ -166,7 +164,18 @@ const App = () => {
         <p>The <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique"><b>Pomodoro Technique</b></a> is a time management method developed by Francesco Cirillo in the late 1980s. It is named after the tomato-shaped kitchen timer (pomodoro means tomato in Italian) that Cirillo used to track his work sessions. The technique is designed to improve focus and productivity by breaking work into intervals called "pomodoros" with short breaks in between.</p><br />
         <p>The idea behind the Pomodoro Technique is that the time constraints of each pomodoro create a sense of urgency and encourage focused work. The short breaks help prevent burnout and maintain productivity over longer periods. By breaking work into manageable intervals and providing regular breaks, the technique aims to optimize productivity and reduce distractions.</p>
       </fieldset>
-      
+      <fieldset id='a'>
+        <legend>Benefits</legend>
+          <p>
+          <ul>
+            <li>Effective time management and allocation.</li>
+            <li>Improved focus and concentration during work intervals.</li>
+            <li>Increased productivity due to structured work sessions.</li>
+            <li>Better task prioritization and management of workload.</li>
+            <li>Reduction of procrastination by breaking tasks into manageable chunks.</li>
+          </ul>
+          </p>
+        </fieldset>
     </div>
     <div id="pomo">
       <div id="before">
@@ -203,19 +212,19 @@ const App = () => {
         <fieldset id='f'>
           <legend>Choose Background</legend>
           <ul id='list'>
-            <li><img src={image1} alt="logo" id='1' className='im' onClick={choose}/></li>
-            <li><img src={image2} alt="logo" id='2' className='im' onClick={choose}/></li>
-            <li><img src={image3} alt="logo" id='3' className='im' onClick={choose}/></li>
-            <li><img src={image4} alt="logo" id='4' className='im' onClick={choose}/></li>
-            <li><img src={image5} alt="logo" id='5' className='im' onClick={choose}/></li>
-            <li><img src={image6} alt="logo" id='6' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image1} alt="logo" id='1' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image2} alt="logo" id='2' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image3} alt="logo" id='3' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image4} alt="logo" id='4' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image5} alt="logo" id='5' className='im' onClick={choose}/></li>
+            <li className='li'><img src={image6} alt="logo" id='6' className='im' onClick={choose}/></li>
           </ul>
         </fieldset>
       </div>
       <div id="after">
-        {/* <audio id="audio">
+        <audio id="audio">
           <source src="alarm.mp3" type='audio/mpeg'/>
-        </audio> */}
+        </audio>
         <h1>{isBreak ? 'Break Time!' : 'Focus Time!'}</h1>
         <h2>{formatTime(timeLeft)}</h2>
         <button className="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
