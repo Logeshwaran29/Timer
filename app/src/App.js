@@ -1,5 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import image1 from './back1.jpg';
+import image2 from './back2.jpg';
+import image3 from './back3.jpg';
+import image4 from './back4.jpg';
+import image5 from './back5.jpg';
+import image6 from './back6.jpg';
+import image7 from './back7.jpg';
 
 const App = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -119,7 +126,7 @@ const App = () => {
     const img = `back${event.target.id}.jpg`;
     const body=document.querySelector('#body');
     console.log(event.target.id);
-    body.style.backgroundImage='url('+img+')';
+    body.style.backgroundImage='url('+img+') cover cover / center';
 
     const a=document.querySelector('#back'),b=document.querySelector('#before');
     a.style.display='none';
@@ -174,13 +181,13 @@ const App = () => {
         <fieldset id='f'>
           <legend>Choose Background</legend>
           <ul id='list'>
-            <li id='1' onClick={choose}><img src="back1.jpg" alt="logo" /></li>
-            <li id='2' onClick={choose}><img src="back2.jpg" alt="logo" /></li>
-            <li id='3' onClick={choose}><img src="back3.jpg" alt="logo" /></li>
-            <li id='4' onClick={choose}><img src="back4.jpg" alt="logo" /></li>
-            <li id='5' onClick={choose}><img src="back5.jpg" alt="logo" /></li>
-            <li id='6' onClick={choose}><img src="back6.jpg" alt="logo" /></li>
-            <li id='7' onClick={choose}><img src="back7.jpg" alt="logo" /></li>
+            <li><img src={image1} alt="logo" id='1' className='im' onClick={choose}/></li>
+            <li><img src={image2} alt="logo" id='2' className='im' onClick={choose}/></li>
+            <li><img src={image3} alt="logo" id='3' className='im' onClick={choose}/></li>
+            <li><img src={image4} alt="logo" id='4' className='im' onClick={choose}/></li>
+            <li><img src={image5} alt="logo" id='5' className='im' onClick={choose}/></li>
+            <li><img src={image6} alt="logo" id='6' className='im' onClick={choose}/></li>
+            <li><img src={image7} alt="logo" id='7' className='im' onClick={choose}/></li>
           </ul>
         </fieldset>
       </div>

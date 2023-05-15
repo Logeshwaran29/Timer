@@ -1,5 +1,5 @@
 body{
-    background-image: url('back1.jpg');
+    background-image: url('back7.jpg');
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -127,6 +127,10 @@ fieldset{
     margin-top: -8%;
 }
 
+.im{
+    width: 60%;
+    padding: 2% 5%;
+}
 
 legend{
     color: white;
