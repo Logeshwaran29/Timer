@@ -156,7 +156,7 @@ const App = () => {
     <div id={op?'about':'not'}>
       <fieldset id='a'>
         <legend>About</legend>
-        <p>The aim of this app is to help you focus on any task you are working on, such as study, writing, or coding. <br /><br />
+        <p>The aim of <b>Focus Timer</b> is to help you focus on any task you are working on, such as study, writing, or coding. <br /><br />
         This app is inspired by Pomodoro Technique which is a time management method developed by Francesco Cirillo.</p>
       </fieldset>
       <fieldset id='a'>
