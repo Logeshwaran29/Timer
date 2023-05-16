@@ -6,7 +6,8 @@ import image3 from './back3.jpg';
 import image4 from './back4.jpg';
 import image5 from './back5.jpg';
 import image6 from './back6.jpg';
-import Audio from './alarm.mp3';
+// import Audio from './alarm.mp3';
+import SpotifyPlayer from 'react-spotify-player';
 
 const App = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -133,33 +134,29 @@ const App = () => {
   }
 
   const choose=(event)=>{
-    // const img = `url('./back${event.target.id}.jpg')`;
-    // console.log(img);
-    // document.body.style.backgroundImage="url('./back3.jpg')";
-    // console.log(document.body.style);
     const count=`${event.target.id}`
     var img=image1;
     switch (count) {
       case '1':
-          img=(image1)
-          break;
-        case '3':
-          img=(image3)
-          break;
-        case '2':
-          img=(image2)
-          break;
-        case '4':
-          img=(image4)
-          break;
-        case '5':
-            img=(image5)
-            break;
-        case '6':
-              img=(image6)
-              break;
-            }
-          setbgimage(img);
+        img=(image1)
+        break;
+      case '3':
+        img=(image3)
+        break;
+      case '2':
+        img=(image2)
+        break;
+      case '4':
+        img=(image4)
+        break;
+      case '5':
+        img=(image5)
+        break;
+      case '6':
+        img=(image6)
+        break;
+      }
+    setbgimage(img);
     const a=document.querySelector('#back'),b=document.querySelector('#before');
     a.style.display='none';
     b.style.display='block';
@@ -179,20 +176,22 @@ const App = () => {
 
   return (
     <div
-  className='main'
-  style={{
+    className='main'
+    style={{
     backgroundImage: `url(${bgimage})`, 
     overflow: "hidden",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "100%"
-
-  }}
->
+    height: "100vh"
+    }}
+    >
     <div id='logo'>
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
+    <div className='spotify'><SpotifyPlayer
+      uri="https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt"
+    /></div>
     <div id={op?'about':'not'}>
       <fieldset id='a'>
         <legend>About</legend>
