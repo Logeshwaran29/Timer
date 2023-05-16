@@ -155,6 +155,8 @@ const App = () => {
       case '6':
         img=(image6)
         break;
+      default:
+        break;
       }
     setbgimage(img);
     const a=document.querySelector('#back'),b=document.querySelector('#before');
