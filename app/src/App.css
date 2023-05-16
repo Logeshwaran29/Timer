@@ -1,12 +1,12 @@
-body{
-    background: url('back1.jpg');
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
+*{
+padding: 0px;
+margin: 0px;
 }
 
+body{
+    height: 100vh;
+    overflow: hidden;
+}
 #pomo{
     justify-content: center;
     display: flex;
