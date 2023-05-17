@@ -3,6 +3,10 @@
     margin: 0px;
 }
 
+body{
+    overflow: hidden;
+}
+
 #pomo{
     justify-content: center;
     display: flex;
@@ -241,5 +245,5 @@ li{
 .spotify{
     position: absolute;
     margin-top: 1.5%;
-    margin-left: 83%;  
+    margin-left: 82%; 
 }

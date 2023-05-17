@@ -8,6 +8,9 @@ import image5 from './back5.jpg';
 import image6 from './back6.jpg';
 // import Audio from './alarm.mp3';
 import SpotifyPlayer from 'react-spotify-player';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faRotate, faGear,faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const App = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -192,7 +195,7 @@ const App = () => {
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
     <div className='spotify'><SpotifyPlayer
-      uri="https://open.spotify.com/artist/7vgzPGibRcse3QY4d9316n"
+      uri="https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM"
     /></div>
     <div id={op?'about':'not'}>
       <fieldset id='a'>
@@ -237,7 +240,7 @@ const App = () => {
         <div id="field" onClick={open}>
         <fieldset>
           <legend>Background</legend>
-          <label>Select Background <i class="fa-solid fa-chevron-right"/></label>
+          <label>Select Background <FontAwesomeIcon icon={faChevronRight} /></label>
         </fieldset>
         </div>
         <div id='field'>
@@ -269,10 +272,10 @@ const App = () => {
         </audio>
         <h1>{isBreak ? 'Break Time!' : 'Focus Time!'}</h1>
         <h2>{formatTime(timeLeft)}</h2>
-        <button className="button" onClick={startTimer}><i class="fa-solid fa-play"></i></button>
-        <button className="button" onClick={stopTimer}><i class="fa-solid fa-pause"></i></button>
-        <button id="reset" onClick={resetTimer}><i class="fa-solid fa-rotate"></i></button>
-        <button id="reset" onClick={change}><i class="fa-solid fa-gear"></i></button>
+        <button className="button" onClick={startTimer}><FontAwesomeIcon icon={faPlay} /></button>
+        <button className="button" onClick={stopTimer}><FontAwesomeIcon icon={faPause} /></button>
+        <button id="reset" onClick={resetTimer}><FontAwesomeIcon icon={faRotate} /></button>
+        <button id="reset" onClick={change}><FontAwesomeIcon icon={faGear} /></button>
       </div>
     </div>
     </div>
