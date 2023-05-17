@@ -192,7 +192,7 @@ const App = () => {
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
     <div className='spotify'><SpotifyPlayer
-      uri="https://open.spotify.com/playlist/37i9dQZF1DWWY64wDtewQt"
+      uri="https://open.spotify.com/artist/7vgzPGibRcse3QY4d9316n"
     /></div>
     <div id={op?'about':'not'}>
       <fieldset id='a'>
