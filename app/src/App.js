@@ -146,30 +146,30 @@ const App = () => {
   }
 
   const choose=(event)=>{
-    const count=`${event.target.id}`
+    const count=`${event.target.id}`;
     var img=image1;
     switch (count) {
       case '1':
-        img=(image1)
-        break;
-      case '3':
-        img=(image3)
+        img=(image1);
         break;
       case '2':
-        img=(image2)
+        img=(image2);
+        break;
+      case '3':
+        img=(image3);
         break;
       case '4':
-        img=(image4)
+        img=(image4);
         break;
       case '5':
-        img=(image5)
+        img=(image5);
         break;
       case '6':
-        img=(image6)
+        img=(image6);
         break;
       default:
         break;
-      }
+    }
     setbgimage(img);
     const a=document.querySelector('#back'),b=document.querySelector('#before');
     a.style.display='none';
