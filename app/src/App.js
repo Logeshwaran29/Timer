@@ -74,7 +74,7 @@ const App = () => {
             new Notification("Focus Timer",{
               body:text,
               tag:'Message',
-              icon:'logo.jpg'
+              icon:'logo.jpeg'
             });
           }
         });
