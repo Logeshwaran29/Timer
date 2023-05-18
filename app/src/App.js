@@ -9,8 +9,8 @@ import image6 from './back6.jpg';
 // import Audio from './alarm.mp3';
 import SpotifyPlayer from 'react-spotify-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause, faRotate, faGear,faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
+import { faPlay, faPause, faRotate, faGear, faChevronRight, faChartSimple, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faMugSaucer, faBusinessTime } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // 25 minutes in seconds
@@ -145,6 +145,18 @@ const App = () => {
     b.style.display='none';
   }
 
+  const reports=()=>{
+    const a=document.querySelector('#before'),b=document.querySelector('.up');
+    a.style.display='none';
+    b.style.display='block';
+  }
+
+  const close1=()=>{
+    const a=document.querySelector('.up'),b=document.querySelector('#after');
+    a.style.display='none';
+    b.style.display='block';
+  }
+
   const choose=(event)=>{
     const count=`${event.target.id}`;
     var img=image1;
@@ -199,9 +211,6 @@ const App = () => {
     backgroundPosition: "center",
     height: "100vh"
     }}>
-    <div className='report'>
-      
-    </div>
     <div id='logo'>
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
@@ -239,7 +248,7 @@ const App = () => {
           <fieldset>
             <legend>Choose Duration</legend>
             <div className='in'>
-              <label htmlFor="min">Minutes:</label>
+              <label htmlFor="min">Focus:</label>
               <input type="number" id='min' placeholder='1' step={1} min={1} max={90} required/> 
             </div>
             <div className='in'>
@@ -261,8 +270,25 @@ const App = () => {
             <input type="text" id='name'/>
           </fieldset>
         </div>
+        <div id='field' onClick={reports}>
+          <fieldset>
+            <legend>Stats</legend>
+            <label>See Report <FontAwesomeIcon icon={faChartSimple} /></label>
+          </fieldset>
+        </div>
         <button id='button' onClick={close}>CANCEL</button>
         <button id='button' onClick={getValue}>OK</button>
+      </div>
+      <div className="up">
+      <FontAwesomeIcon icon={faXmark} size="xl" style={{marginLeft:"85%", marginTop: "2.5%"}} onClick={close1}/>
+      <div className="rep">
+        <fieldset id='s'>
+          <legend>Summary</legend>
+          <div className="total"><FontAwesomeIcon icon={faClock} /><div className="t">{wTime} mins</div></div>
+          <div className="total"><FontAwesomeIcon icon={faMugSaucer} /><div className="t">{bTime} mins</div></div>
+          <div className="total"><FontAwesomeIcon icon={faBusinessTime} /><div className="t">{total} hrs</div></div>
+        </fieldset>
+      </div>
       </div>
       <div id='back'>
         <fieldset id='f'>
@@ -285,8 +311,8 @@ const App = () => {
         <h2>{formatTime(timeLeft)}</h2>
         <button className="button" onClick={startTimer}><FontAwesomeIcon icon={faPlay} /></button>
         <button className="button" onClick={stopTimer}><FontAwesomeIcon icon={faPause} /></button>
-        <button id="reset" onClick={resetTimer}><FontAwesomeIcon icon={faRotate} /></button>
-        <button id="reset" onClick={change}><FontAwesomeIcon icon={faGear} /></button>
+        <button className="reset" onClick={resetTimer}><FontAwesomeIcon icon={faRotate} /></button>
+        <button className="reset" onClick={change}><FontAwesomeIcon icon={faGear} /></button>
       </div>
     </div>
     </div>
