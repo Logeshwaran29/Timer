@@ -43,7 +43,7 @@ const App = () => {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isRunning]);
+  }, [isRunning, isBreak]);
 
   useEffect(() => {
     if (timeLeft === 0) {
