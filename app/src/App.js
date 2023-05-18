@@ -19,6 +19,9 @@ const App = () => {
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
   const [workTime,setWorkTime] = useState(25 * 60);
+  const [wTime,setWTime]=useState(0 * 60);
+  const [bTime,setBTime]=useState(0 * 60);
+  const [total,setTotal]=useState(0);
   // const [checkTime,setCheckTime] = useState(25 * 60);
   const [name,setName] = useState("");
   const [bgimage,setbgimage] = useState(image1);
@@ -29,6 +32,11 @@ const App = () => {
     let interval = null;
     if (isRunning) {
       interval = setInterval(() => {
+        if(!isBreak){
+          setWTime(wTime => wTime + 1);
+        }else{
+          setBTime(bTime => bTime + 1);
+        }setTotal(total => total + 1);
         setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
       }, 1000);
     } else {
@@ -43,6 +51,7 @@ const App = () => {
         a.play();
         setIsPlay(true);
       }
+      console.log(total);
       let text;
       setIsRunning(false);
       if(isBreak){
@@ -189,14 +198,16 @@ const App = () => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     height: "100vh"
-    }}
-    >
+    }}>
+    <div className='report'>
+      
+    </div>
     <div id='logo'>
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
     </div>
-    <div className='spotify'><SpotifyPlayer
-      uri="https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM"
-    /></div>
+    <div className='spotify'>
+      <SpotifyPlayer uri="https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM"/>
+    </div>
     <div id={op?'about':'not'}>
       <fieldset id='a'>
         <legend>About</legend>
@@ -226,7 +237,7 @@ const App = () => {
         <h2>Settings</h2>
         <div id="time">
           <fieldset>
-            <legend>Choose Time</legend>
+            <legend>Choose Duration</legend>
             <div className='in'>
               <label htmlFor="min">Minutes:</label>
               <input type="number" id='min' placeholder='1' step={1} min={1} max={90} required/> 
