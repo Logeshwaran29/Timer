@@ -73,10 +73,10 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
     border-radius: 20px;
-    height: 75%;
+    height: 70%;
     width: 25%;
     position: absolute;
-    margin-top: -3%;
+    margin-top: -1%;
 }
 
 #time{
