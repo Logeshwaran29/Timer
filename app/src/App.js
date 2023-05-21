@@ -129,18 +129,22 @@ const App = () => {
     const a1=document.querySelector('#before'),b1=document.querySelector('#after');
     a1.style.display='none';
     b1.style.display='block';
-    const work=document.querySelector('#min').value,br=document.querySelector('#sec').value;
-    const name=document.querySelector('#name').value;
-    setTimeLeft(work * 60);
-    setWorkTime(work * 60);
-    setBreakTimeLeft(br * 60);
-    setName(name);
   }
 
-  const close=()=>{
-    const a1=document.querySelector('#before'),b1=document.querySelector('#after');
-    a1.style.display='none';
-    b1.style.display='block';
+  const getM =(e)=>{
+    const a=e.target.value;
+    setTimeLeft(a * 60);
+    setWorkTime(a * 60);
+  }
+
+  const getB =(e)=>{
+    const a=e.target.value;
+    setBreakTimeLeft(a * 60);
+  }
+
+  const getN =(e)=>{
+    const a= e.target.value;
+    setName(a);
   }
 
   const change=()=>{
@@ -219,7 +223,8 @@ const App = () => {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "100vh"
+    height: "100vh",
+    transition: "3s"
     }}>
     <div id='logo'>
       <img id='img' src="image.png" alt="Logo" onClick={give}/>
@@ -259,11 +264,11 @@ const App = () => {
             <legend>Choose Duration</legend>
             <div className='in'>
               <label htmlFor="min">Focus:</label>
-              <input type="number" id='min' placeholder='1' step={1} min={1} max={90} required/> 
+              <input type="number" id='min' placeholder='1' onChange={getM} step={1} min={1} max={90} required/> 
             </div>
             <div className='in'>
               <label htmlFor="sec">Break:</label>
-              <input type="number" id='sec' placeholder='1' step={1} min={1} max={90} required/>
+              <input type="number" id='sec' placeholder='1' onChange={getB} step={1} min={1} max={90} required/>
             </div>  
           </fieldset>
         </div> 
@@ -277,7 +282,7 @@ const App = () => {
           <fieldset>
             <legend>Name</legend>
             <label htmlFor="name">Enter Name:</label>
-            <input type="text" id='name'/>
+            <input type="text" id='name' onChange={getN}/>
           </fieldset>
         </div>
         <div id='field' onClick={reports}>
@@ -286,7 +291,6 @@ const App = () => {
             <label>See Report <FontAwesomeIcon icon={faChartSimple} /></label>
           </fieldset>
         </div>
-        <button id='button' onClick={close}>CANCEL</button>
         <button id='button' onClick={getValue}>OK</button>
       </div>
       <div className="up">
