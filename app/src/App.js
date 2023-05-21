@@ -19,8 +19,8 @@ const App = () => {
   const [isBreak, setIsBreak] = useState(false);
   const [isPlay,setIsPlay] = useState(false);
   const [workTime,setWorkTime] = useState(25 * 60);
-  const [wTime,setWTime]=useState(0 * 60);
-  const [bTime,setBTime]=useState(0 * 60);
+  const [wTime,setWTime]=useState(0);
+  const [bTime,setBTime]=useState(0);
   const [total,setTotal]=useState(0);
   // const [checkTime,setCheckTime] = useState(25 * 60);
   const [name,setName] = useState("");
@@ -32,11 +32,6 @@ const App = () => {
     let interval = null;
     if (isRunning) {
       interval = setInterval(() => {
-        if(!isBreak){
-          setWTime(wTime => wTime + 1);
-        }else{
-          setBTime(bTime => bTime + 1);
-        }setTotal(total => total + 1);
         setTimeLeft(prevTimeLeft => prevTimeLeft - 1);
       }, 1000);
     } else {
@@ -45,13 +40,29 @@ const App = () => {
     return () => clearInterval(interval);
   }, [isRunning, isBreak]);
 
+  useEffect(() =>{
+    let interval=null;
+    if(isRunning) {
+      interval = setInterval(() =>{
+        if(isBreak){
+          setBTime(prevTimeLeft => prevTimeLeft + 1);
+        }else{
+          setWTime(prevTimeLeft => prevTimeLeft + 1);
+        }
+        setTotal(prevTimeLeft => prevTimeLeft + 1);
+      },1000);
+    }else{
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval); 
+  },[isRunning, isBreak]);
+
   useEffect(() => {
     if (timeLeft === 0) {
       if(!isPlay){
         a.play();
         setIsPlay(true);
       }
-      console.log(total);
       let text;
       setIsRunning(false);
       if(isBreak){
@@ -66,7 +77,6 @@ const App = () => {
         }else{
           text=`Hello ${name}! You have been working for a quite a time, Time to take a break!`;
         }
-        
       }
       if('Notification' in window){
         Notification.requestPermission().then((perm) => {
@@ -74,7 +84,7 @@ const App = () => {
             new Notification("Focus Timer",{
               body:text,
               tag:'Message',
-              icon:'logo.jpeg'
+              icon:'Focus timer.png'
             });
           }
         });
@@ -284,9 +294,9 @@ const App = () => {
       <div className="rep">
         <fieldset id='s'>
           <legend>Summary</legend>
-          <div className="total"><FontAwesomeIcon icon={faClock} /><div className="t">{wTime} mins</div></div>
-          <div className="total"><FontAwesomeIcon icon={faMugSaucer} /><div className="t">{bTime} mins</div></div>
-          <div className="total"><FontAwesomeIcon icon={faBusinessTime} /><div className="t">{total} hrs</div></div>
+          <div className="total"><FontAwesomeIcon icon={faClock} /><div className="t">{Math.floor(wTime / 60)} mins</div></div>
+          <div className="total"><FontAwesomeIcon icon={faMugSaucer} /><div className="t">{Math.floor(bTime / 60)} mins</div></div>
+          <div className="total"><FontAwesomeIcon icon={faBusinessTime} /><div className="t">{Math.floor(total / 60)} mins</div></div>
         </fieldset>
       </div>
       </div>
