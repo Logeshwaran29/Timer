@@ -22,7 +22,7 @@ const App = () => {
   const [wTime,setWTime]=useState(0);
   const [bTime,setBTime]=useState(0);
   const [total,setTotal]=useState(0);
-  // const [checkTime,setCheckTime] = useState(25 * 60);
+  const [checkTime,setCheckTime] = useState(0);
   const [name,setName] = useState("");
   const [bgimage,setbgimage] = useState(image1);
   const [op,setOp]=useState(false);
@@ -50,6 +50,21 @@ const App = () => {
           setWTime(prevTimeLeft => prevTimeLeft + 1);
         }
         setTotal(prevTimeLeft => prevTimeLeft + 1);
+        setCheckTime(prevTimeLeft => prevTimeLeft + 1);
+        if(Math.floor(checkTime / 60) == 10 && timeLeft > 5 * 30){
+          setCheckTime(0);
+          if('Notification' in window){
+            Notification.requestPermission().then((perm) => {
+              if(perm==='granted'){
+                new Notification("Focus Timer",{
+                  body:'Hold a second, take a deap breath and drink some water or take a coffe to make yourself energitic',
+                  tag:'Message',
+                  icon:'Focus timer.png'
+                });
+              }
+            });
+          }
+        } 
       },1000);
     }else{
       clearInterval(interval);
