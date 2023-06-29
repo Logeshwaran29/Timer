@@ -15,6 +15,7 @@ body{
     align-items: center;
     height: 100vh;
     width:100%;
+
 }
 
 h1 {
@@ -70,10 +71,10 @@ h2 {
 }
 
 #before {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(186, 176, 176, 0.551);
     display: none;
     border-radius: 20px;
-    height: 70%;
+    height: 85%;
     width: 25%;
     position: absolute;
     margin-top: -1%;
@@ -83,17 +84,19 @@ h2 {
     display: flex;
     justify-content: space-between;
     padding:0% 10%;
+    margin-top: 1px;
 }
 
 #field{
     display: flex;
     justify-content: space-between;
     padding: 0% 10%;
+    margin-top: 1px;
 }
 
 #back{
     display: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.36);
     width: 20%;
     height: 35%;
     border-radius: 10px;
@@ -144,7 +147,8 @@ legend{
 
 .in{
     width: 100px;
-    padding:2%;
+    padding-left:1%;
+
 }
 
 label {
@@ -159,7 +163,7 @@ input {
     width: 100%;
     box-sizing: border-box;
     padding: 7px 5px;
-    background-color: rgb(95, 95, 95);
+    background-color: rgba(95, 95, 95, 0.5);
     color: white;
     border-radius: 5px;
     border: 2px solid black;
@@ -242,14 +246,14 @@ li{
 
 .spotify{
     position: absolute;
-    margin-top: 1.5%;
-    margin-left: 81%; 
+    margin-top: 1.7%;
+    margin-left: 79%; 
 }
 
 .up{
     height: 25%;
-    width: 20%;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 25%;
+    background-color: rgba(186, 176, 176, 0.482);
     display: none;
     border-radius: 10px;
     padding: 0.5% 0.5%;
